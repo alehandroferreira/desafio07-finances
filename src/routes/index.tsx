@@ -1,9 +1,15 @@
 import React from 'react';
 
-import AppRoutes from './app.routes';
+import { Switch, Route } from 'react-router-dom';
 
-const Routes: React.FC = () => {
-  return <AppRoutes />;
-};
+import Dashboard from '../pages/Dashboard';
+import Import from '../pages/Import';
+
+const Routes: React.FC = () => (
+  <Switch>
+    <Route path="/" exact component={Dashboard} />
+    <Route path="/import" component={Import} />
+  </Switch>
+);
 
 export default Routes;
